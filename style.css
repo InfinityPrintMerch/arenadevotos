@@ -1,0 +1,851 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body {
+    user-select: none;
+}
+
+/* Asegura que los botones puedan seguir recibiendo clics */
+button {
+    pointer-events: auto;
+}
+
+header {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #0aff84;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.game-card {
+    background: #2b2b2b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #0aff84a0;
+}
+
+.game-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+.game-info {
+    padding: 1rem;
+}
+
+.game-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+    color: #0aff84;
+}
+
+.game-info p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.game-info .meta {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.popup-content {
+    background: #202020;
+    border: none;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    overflow: hidden;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.popup-header {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.popup-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    /* ajusta la altura si quieres más cobertura */
+    background-color: rgba(18, 18, 18, 0.5);
+    /* negro semitransparente */
+    pointer-events: none;
+}
+
+.popup-header::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #202020, transparent);
+    pointer-events: none;
+    z-index: 2;
+    /* encima de la película, pero debajo del título */
+}
+
+
+.popup-title {
+    position: absolute;
+    bottom: -60px;
+    left: 20px;
+    color: #0aff84;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 10;
+}
+
+.popup-body {
+    padding: 1rem 1.5rem 0rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.popup-body p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.popup-body strong {
+    color: #0aff84;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem;
+    background: #202020;
+    flex-shrink: 0;
+}
+
+.popup-footer button {
+    background: #0aff84;
+    color: #121212;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px #0aff84cc;
+    transition: background 0.3s ease;
+}
+
+.popup-footer button:hover {
+    background: #00cc44;
+    box-shadow: 0 0 12px #00cc44cc;
+}
+
+.popup-content .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    color: #0aff84;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 2;
+    text-shadow: 0 0 10px #0aff84aa;
+    border: none;
+    outline: none;
+}
+
+/* Fuente Poppins ya asumida cargada en tu proyecto */
+
+nav {
+    background-color: #1a1a1a;
+    padding: 15px 30px;
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    color: #0aff84;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #0aff84;
+    transform: scale(1.05);
+    outline: none;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    nav .logo {
+        margin-bottom: 10px;
+    }
+}
+
+
+.banner-section {
+    position: relative;
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    padding: 100px 20px;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 12px;
+
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    color: #00c853;
+    /* verde brillante */
+    opacity: 0;
+    animation: fadeInUpBlur 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.banner-content h2 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    margin: 10px 0 0;
+    color: #a5d6a7;
+    /* verde claro */
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInUpBlur 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: 0.8s;
+}
+
+/* Más suave y elegante que solo fadeInUp */
+@keyframes fadeInUpBlur {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.banner-overlay {
+    position: absolute;
+    top: -40%;
+    left: -25%;
+    width: 170%;
+    height: 170%;
+    background: radial-gradient(circle at center, rgba(0, 200, 83, 0.15), transparent 70%);
+    animation: rotate 25s linear infinite reverse;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #00c85388);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .banner-content h2 {
+        font-size: 3rem;
+    }
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+.vote-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: #303030;
+    border-radius: 8px;
+    padding: 3px 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #f0f0f0;
+    pointer-events: none;
+}
+
+
+
+
+
+/* Caja inicial para login con Google */
+
+.login-box-container {
+    display: flex;
+    justify-content: center;
+    /* centra horizontalmente */
+    align-items: center;
+    /* centra verticalmente */
+    height: 70vh;
+    /* altura completa del viewport */
+}
+
+.login-box {
+    background-color: #303030;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    margin-bottom: 1rem;
+    color: #0aff84;
+}
+
+.login-button {
+    padding: 10px 20px;
+    background-color: #0aff84;
+    color: #121212;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0ecf6c;
+}
+
+.login-input {
+    padding: 10px;
+    width: 100%;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* ---------------- PANEL DE USUARIO ESTILO DISCORD ---------------- */
+.panel-user-card {
+    background-color: #272727;
+    margin: 20px;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 1rem;
+    z-index: 1000;
+    height: auto;
+}
+
+/* Menú lateral */
+.panel-sidebar {
+    flex: 1;
+    max-width: 30%;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.panel-sidebar button {
+    background: none;
+    border: none;
+    color: #a5d6a7;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.panel-sidebar button:hover,
+.panel-sidebar button.active {
+    background-color: #0aff84;
+    color: #121212;
+}
+
+/* Área derecha del contenido */
+.panel-content {
+    flex: 2;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    overflow-y: auto;
+    color: #f0f0f0;
+}
+
+/* Imagen de perfil + botón subir */
+.panel-profile-img {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.panel-profile-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #0aff84;
+}
+
+.panel-upload-btn {
+    background-color: #0aff84;
+    color: #121212;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.panel-upload-btn:hover {
+    background-color: #0ecf3d;
+}
+
+.panel-upload-input {
+    display: none;
+}
+
+/* Responsive para panel */
+@media (max-width: 768px) {
+    .panel-user-card {
+        flex-direction: column;
+        height: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+    }
+
+    .panel-sidebar {
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .panel-content {
+        padding: 1rem;
+    }
+}
+
+.admin-button {
+    background-color: #ff1744;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.admin-button:hover {
+    background-color: #d50000;
+}
+
+/* Estilos generales para inputs y textarea */
+#lista-juegos-admin form input,
+#lista-juegos-admin form textarea {
+    background-color: #2b2b2b;
+    border: 1.5px solid #444;
+    border-radius: 8px;
+    color: #f0f0f0;
+    padding: 10px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+    /* Solo para textarea */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#lista-juegos-admin form input::placeholder,
+#lista-juegos-admin form textarea::placeholder {
+    color: #888;
+}
+
+/* Al enfocar */
+#lista-juegos-admin form input:focus,
+#lista-juegos-admin form textarea:focus {
+    border-color: #0aff84;
+    box-shadow: 0 0 8px #0aff8499;
+    outline: none;
+}
+
+/* Botones dentro del formulario */
+#lista-juegos-admin form button {
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#lista-juegos-admin form button[type="submit"] {
+    background-color: #0aff84;
+    color: #121212;
+    margin-right: 10px;
+}
+
+#lista-juegos-admin form button[type="submit"]:hover {
+    background-color: #00cc44;
+    box-shadow: 0 0 12px #00cc44cc;
+}
+
+#lista-juegos-admin form button[type="button"] {
+    background-color: #555;
+    color: #f0f0f0;
+}
+
+#lista-juegos-admin form button[type="button"]:hover {
+    background-color: #444;
+}
+
+#search-sort-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 10px;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+#sortSelect {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#sortSelect:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.popup-button {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 10px 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #303030;
+    background-color: #0aff84;
+    border: none;
+    font-weight: 900;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.popup-button:hover {
+    background-color: #303030;
+    color: #0aff84;
+}
+
+.votaciones-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.chart-container,
+.ranking-container {
+    background-color: #303030;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.chart-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.ranking-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+.ranking-container table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+
+}
+
+.ranking-container th,
+.ranking-container td {
+    padding: 12px 16px;
+    text-align: left;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.ranking-container th {
+    background-color: #292929;
+    color: #f0f0f0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ranking-container td {
+    color: #ccc;
+    transition: background 0.2s ease;
+}
+
+.ranking-container tr:hover td {
+    background-color: #2a2a2a;
+}
+
+.ranking-container tr:first-child td {
+    background-color: #3b2e1a;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.ranking-container td:first-child {
+    width: 50px;
+    font-weight: 600;
+    color: #aaa;
+}
+
+#voteChart {
+    background: transparent;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Contenedor de votos */
+.mis-votos-list {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* Item individual de voto */
+.mis-votos-list .voto-item {
+    background-color: #2b2b2b;
+    border: 1.5px solid #0aff84;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #0aff84;
+    user-select: text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: default;
+}
+
+.mis-votos-list .voto-item:hover {
+    background-color: #0aff8499;
+    border-color: #00cc44;
+    color: #121212;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    color: white;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.avatar-option {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease;
+}
+
+.avatar-option:hover {
+    transform: scale(1.05);
+}
+
+.avatar-option.selected {
+    border-color: #00b894;
+    /* verde o color destacado */
+    box-shadow: 0 0 8px #00b894;
+}

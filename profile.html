@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="login-wrapper">
+
+    <div class="login-box-container">
+        <div class="login-box">
+            <h1>Bienvenid@</h1>
+            <h2>Inicia sesión</h2>
+            <button id="loginBtn" class="login-button" onclick="loginWithGoogle()">Iniciar con Google</button>
+
+            <div id="profile-section" style="display:none;">
+                <p>Elige tu nombre de perfil:</p>
+                <input type="text" id="profileName" class="login-input" placeholder="Tu nombre de perfil" />
+                <button class="login-button" onclick="saveProfileName()">Guardar nombre</button>
+                <p id="profileNameDisplay"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-card" class="panel-user-card" style="display:none;">
+        <div id="user-menu" class="panel-sidebar">
+            <button class="active" onclick="showSection('profile')">Perfil</button>
+            <button onclick="showSection('recommendations')">Mis Recomendaciones</button>
+        </div>
+
+        <div id="user-content" class="panel-content">
+            <section id="section-profile">
+                <h3>Perfil guardado</h3>
+                <div class="panel-profile-img">
+                    <img id="profileImage" src="https://i.ibb.co/j9WyfkYp/default-icon.png" alt="Imagen de perfil" />
+                    <button id="openAvatarModal" class="login-button">Elegir Avatar</button>
+
+                    <!-- Modal de selección de avatar -->
+                    <div id="avatarModal" class="modal">
+                        <div class="modal-content">
+                            <span id="closeAvatarModal" class="close">&times;</span>
+                            <h3>Selecciona tu avatar</h3>
+                            <div id="avatarGrid" class="avatar-grid"></div>
+                            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center;">
+                                <button id="saveAvatarBtn" class="login-button">Guardar</button>
+                                <button id="cancelAvatarBtn" class="login-button"
+                                    style="background-color: #aaa;">Cancelar</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <input type="file" id="uploadImageInput" class="panel-upload-input" accept="image/*" />
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                    <strong>Nombre:</strong>
+                    <span id="savedProfileName" style="font-weight: 500; font-size: 1rem;"></span>
+                    <button id="editNameBtn" title="Editar nombre" style="
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      color: #3498db;
+      padding: 2px;
+  "><i class="fa-solid fa-pen" style="color: #fff;"></i></button>
+                </div>
+
+
+                <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                <button class="login-button" onclick="logout()">Cerrar sesión</button>
+            </section>
+
+
+
+            <section id="section-recommendations" style="display:none;">
+                <h3>Mis Recomendaciones</h3>
+                <div style="display:flex; gap:8px; margin-bottom:10px;">
+                    <input type="text" id="recLink" placeholder="Enlace de Steam" class="login-input">
+                    <button class="login-button" onclick="enviarRecomendacion()">Enviar</button>
+                </div>
+                <div id="mis-recs-list">
+                    <!-- Aquí se muestran las recomendaciones del usuario -->
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <div id="nameModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="closeNameModal" style="float:right; cursor:pointer;">&times;</span>
+            <h3>Cambiar nombre</h3>
+            <input type="text" id="newNameInput" placeholder="Nuevo nombre" class="login-input" />
+            <button id="saveNameBtn" class="login-button">Guardar</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+
+
+    <script src="navbar.js"></script>
+    <script src="authentication.js"></script>
+
+    <script src="footer.js"></script>
+</body>
+
+<div id="footer-container"></div>
+
+</html>

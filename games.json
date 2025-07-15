@@ -1,0 +1,347 @@
+[
+    {
+        "nombre": "Unrailed!",
+        "jugadores": "1–4",
+        "precio": "MX$69",
+        "descripcion": "Construye vías de tren cooperando mientras el tren avanza.",
+        "link": "https://store.steampowered.com/app/1016920/Unrailed/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1016920/header.jpg",
+        "peso": "500 MB"
+    },
+    {
+        "nombre": "Super Bunny Man",
+        "jugadores": "1–4",
+        "precio": "MX$239",
+        "descripcion": "Plataformas con física loca y conejo rebotón.",
+        "link": "https://store.steampowered.com/app/673750/Super_Bunny_Man/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/673750/header.jpg"
+    },
+    {
+        "nombre": "Green Hell",
+        "jugadores": "1–4",
+        "precio": "MX$239",
+        "descripcion": "Supervivencia realista en la selva amazónica.",
+        "link": "https://store.steampowered.com/app/815370/Green_Hell/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/815370/header.jpg"
+    },
+    {
+        "nombre": "Project Zomboid",
+        "jugadores": "10–100+",
+        "precio": "MX$199",
+        "descripcion": "Zombies, supervivencia, mundo abierto muy detallado.",
+        "link": "https://store.steampowered.com/app/108600/Project_Zomboid/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/108600/header.jpg"
+    },
+    {
+        "nombre": "Raft",
+        "jugadores": "1–8",
+        "precio": "MX$149",
+        "descripcion": "Sobrevive en el océano construyendo y defendiendo tu balsa.",
+        "link": "https://store.steampowered.com/app/648800/Raft/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/648800/header.jpg"
+    },
+    {
+        "nombre": "Moving Out!",
+        "jugadores": "1–4",
+        "precio": "MX$159",
+        "descripcion": "Caótico juego de mudanzas: lanza muebles.",
+        "link": "https://store.steampowered.com/app/1216800/Moving_Out/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1216800/header.jpg"
+    },
+    {
+        "nombre": "Boomerang Fu",
+        "jugadores": "2–6",
+        "precio": "MX$79",
+        "descripcion": "Lucha party con boomerangs en frenéticas arenas.",
+        "link": "https://store.steampowered.com/app/1070080/Boomerang_Fu/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1070080/header.jpg"
+    },
+    {
+        "nombre": "We Need to Go Deeper",
+        "jugadores": "1–4",
+        "precio": "MX$139",
+        "descripcion": "Submarino steampunk, combate y gestión cooperativa.",
+        "link": "https://store.steampowered.com/app/447820/We_Need_to_Go_Deeper/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/447820/header.jpg"
+    },
+    {
+        "nombre": "Human: Fall Flat",
+        "jugadores": "1–8",
+        "precio": "MX$119",
+        "descripcion": "Plataformas con física absurda y puzzles cooperativos.",
+        "link": "https://store.steampowered.com/app/477160/Human_Fall_Flat/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/477160/header.jpg"
+    },
+    {
+        "nombre": "Rubber Bandits",
+        "jugadores": "1–4",
+        "precio": "MX$109",
+        "descripcion": "Party de robos con física loca.",
+        "link": "https://store.steampowered.com/app/1235360/Rubber_Bandits/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1235360/header.jpg"
+    },
+    {
+        "nombre": "Survive on Raft",
+        "jugadores": "1–8",
+        "precio": "MX$99",
+        "descripcion": "Supervivencia marina similar a Raft.",
+        "link": "https://store.steampowered.com/app/1278000/Survive_on_Raft/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1278000/header.jpg"
+    },
+    {
+        "nombre": "The Forest",
+        "jugadores": "1–8",
+        "precio": "MX$129",
+        "descripcion": "Supervivencia y terror en isla con caníbales.",
+        "link": "https://store.steampowered.com/app/242760/The_Forest/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/242760/header.jpg"
+    },
+    {
+        "nombre": "Subsistence",
+        "jugadores": "1–10",
+        "precio": "MX$109",
+        "descripcion": "Survival PvE con base building y fauna salvaje.",
+        "link": "https://store.steampowered.com/app/418030/Subsistence/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/418030/header.jpg"
+    },
+    {
+        "nombre": "Left 4 Dead 2",
+        "jugadores": "4 (mods hasta 16)",
+        "precio": "MX$69",
+        "descripcion": "Shooter zombie cooperativo clásico.",
+        "link": "https://store.steampowered.com/app/550/Left_4_Dead_2/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/550/header.jpg"
+    },
+    {
+        "nombre": "Pixel Gun 3D",
+        "jugadores": "8–12+",
+        "precio": "Gratis",
+        "descripcion": "Shooter voxel estilo Minecraft con PvP.",
+        "link": "https://store.steampowered.com/app/818230/Pixel_Gun_3D/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/818230/header.jpg"
+    },
+    {
+        "nombre": "Banana Shooter",
+        "jugadores": "4–10+",
+        "precio": "Gratis",
+        "descripcion": "Party con bananas explosivas retro.",
+        "link": "https://store.steampowered.com/app/1161740/Banana_Shooter/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1161740/header.jpg"
+    },
+    {
+        "nombre": "Terraria",
+        "jugadores": "8–100+",
+        "precio": "MX$99",
+        "descripcion": "Sandbox 2D con exploración, construcción y jefes.",
+        "link": "https://store.steampowered.com/app/105600/Terraria/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/105600/header.jpg"
+    },
+    {
+        "nombre": "Garry's Mod",
+        "jugadores": "64+",
+        "precio": "MX$79",
+        "descripcion": "Sandbox con modos variados (TTT, Prop Hunt…).",
+        "link": "https://store.steampowered.com/app/4000/Garrys_Mod/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/4000/header.jpg"
+    },
+    {
+        "nombre": "Pummel Party",
+        "jugadores": "4–8",
+        "precio": "MX$69",
+        "descripcion": "Party board + minijuegos caóticos.",
+        "link": "https://store.steampowered.com/app/942310/Pummel_Party/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/942310/header.jpg"
+    },
+    {
+        "nombre": "Ultimate Chicken Horse",
+        "jugadores": "2–8",
+        "precio": "MX$79",
+        "descripcion": "Cada jugador crea obstáculos mientras compite.",
+        "link": "https://store.steampowered.com/app/386940/Ultimate_Chicken_Horse/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/386940/header.jpg"
+    },
+    {
+        "nombre": "PICO PARK",
+        "jugadores": "2–8",
+        "precio": "MX$49",
+        "descripcion": "Puzzle-platformer cooperativo total.",
+        "link": "https://store.steampowered.com/app/1286490/PICO_PARK/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1286490/header.jpg"
+    },
+    {
+        "nombre": "Party Animals",
+        "jugadores": "1–8",
+        "precio": "MX$129",
+        "descripcion": "Party de peleas con animales adorables.",
+        "link": "https://store.steampowered.com/app/1364730/Party_Animals/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1364730/header.jpg"
+    },
+    {
+        "nombre": "Brawlout",
+        "jugadores": "1–8",
+        "precio": "MX$399",
+        "descripcion": "Lucha estilo Smash Bros en 3D.",
+        "link": "https://store.steampowered.com/app/508440/Brawlout/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/508440/header.jpg"
+    },
+    {
+        "nombre": "Stick Fight: The Game",
+        "jugadores": "2–8",
+        "precio": "MX$69",
+        "descripcion": "Luchas de muñecos de palo con física cómica.",
+        "link": "https://store.steampowered.com/app/674940/Stick_Fight_The_Game/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/674940/header.jpg"
+    },
+    {
+        "nombre": "Yet Another Zombie Survive",
+        "jugadores": "4+",
+        "precio": "MX$49",
+        "descripcion": "Shooter zombie casual en arena.",
+        "link": "https://store.steampowered.com/app/1901230/Yet_Another_Zombie_Survive/",
+        "img": "https://via.placeholder.com/600x400"
+    },
+    {
+        "nombre": "Yet Another Zombie Defense",
+        "jugadores": "4+",
+        "precio": "Gratis",
+        "descripcion": "Defensa de zombis tipo tower‑defense + shooter.",
+        "link": "https://store.steampowered.com/app/2345678/Yet_Another_Zombie_Defense/",
+        "img": "https://via.placeholder.com/600x400"
+    },
+    {
+        "nombre": "Gravity",
+        "jugadores": "2–8",
+        "precio": "Gratis",
+        "descripcion": "Plataformas y movimiento espacial casual.",
+        "link": "https://store.steampowered.com/app/3456789/Gravity/",
+        "img": "https://via.placeholder.com/600x400"
+    },
+    {
+        "nombre": "DDNet",
+        "jugadores": "2–12+",
+        "precio": "Gratis",
+        "descripcion": "Competitivo de Teeworlds: plataformas y combate.",
+        "link": "https://ddnet.tw/",
+        "img": "https://via.placeholder.com/600x400"
+    },
+    {
+        "nombre": "Move or Die",
+        "jugadores": "4",
+        "precio": "MX$79",
+        "descripcion": "Party rápido con minijuegos que cambian.",
+        "link": "https://store.steampowered.com/app/289210/Move_or_Die/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/289210/header.jpg"
+    },
+    {
+        "nombre": "Core Keeper",
+        "jugadores": "1–8",
+        "precio": "MX$99",
+        "descripcion": "Aventura minera pixel art cooperativa.",
+        "link": "https://store.steampowered.com/app/2021670/Core_Keeper/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/2021670/header.jpg"
+    },
+    {
+        "nombre": "Deep Rock Galactic",
+        "jugadores": "1–4",
+        "precio": "MX$149",
+        "descripcion": "Enanos espaciales mineros, cooperativo rejugable.",
+        "link": "https://store.steampowered.com/app/548430/Deep_Rock_Galactic/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/548430/header.jpg"
+    },
+    {
+        "nombre": "Super Mining Mech",
+        "jugadores": "1–4",
+        "precio": "MX$79",
+        "descripcion": "Plataformas y minería mech.",
+        "link": "https://store.steampowered.com/app/1237890/Super_Mining_Mech/",
+        "img": "https://via.placeholder.com/600x400"
+    },
+    {
+        "nombre": "The Survivalist",
+        "jugadores": "1–8",
+        "precio": "MX$99",
+        "descripcion": "Crafting, supervivencia y gestión de NPCs.",
+        "link": "https://store.steampowered.com/app/678900/The_Survivalist/",
+        "img": "https://via.placeholder.com/600x400"
+    },
+    {
+        "nombre": "Phasmophobia",
+        "jugadores": "1–4",
+        "precio": "MX$119",
+        "descripcion": "Caza de fantasmas cooperativa terrorífica.",
+        "link": "https://store.steampowered.com/app/739630/Phasmophobia/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/739630/header.jpg"
+    },
+    {
+        "nombre": "Super Animal Battle Royale",
+        "jugadores": "64+",
+        "precio": "Gratis",
+        "descripcion": "Battle royale adorable pixel art.",
+        "link": "https://store.steampowered.com/app/1054590/Super_Animal_Battle_Royale/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1054590/header.jpg"
+    },
+    {
+        "nombre": "Meow Motors",
+        "jugadores": "1–6",
+        "precio": "MX$49",
+        "descripcion": "Carreras con gatos y armas.",
+        "link": "https://store.steampowered.com/app/1165200/Meow_Motors/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1165200/header.jpg"
+    },
+    {
+        "nombre": "Pocket Cars",
+        "jugadores": "1–8",
+        "precio": "Gratis",
+        "descripcion": "Carreras arcade tipo Mini Streets.",
+        "link": "https://store.steampowered.com/app/1599960/Pocket_Cars/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1599960/header.jpg"
+    },
+    {
+        "nombre": "SpeedRunners",
+        "jugadores": "2–8",
+        "precio": "MX$49",
+        "descripcion": "Carreras de plataformas con power-ups.",
+        "link": "https://store.steampowered.com/app/207140/SpeedRunners/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/207140/header.jpg"
+    },
+    {
+        "nombre": "Ninjin: Clash of Carrots",
+        "jugadores": "1–4",
+        "precio": "MX$79",
+        "descripcion": "Beat 'em up pixel art con temática de zanahorias.",
+        "link": "https://store.steampowered.com/app/616840/Ninjin_Clash_of_Carrots/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/616840/header.jpg"
+    },
+    {
+        "nombre": "Shift Happens",
+        "jugadores": "2–4",
+        "precio": "MX$49",
+        "descripcion": "Puzzle-plataforma cooperativo de cambio de forma.",
+        "link": "https://store.steampowered.com/app/321990/Shift_Happens/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/321990/header.jpg"
+    },
+    {
+        "nombre": "Blaze Rush",
+        "jugadores": "1–4",
+        "precio": "MX$79",
+        "descripcion": "Carreras explosivas con power-ups.",
+        "link": "https://store.steampowered.com/app/425090/Blaze_Rush/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/425090/header.jpg"
+    },
+    {
+        "nombre": "Worms W.M.D",
+        "jugadores": "6",
+        "precio": "MX$139",
+        "descripcion": "Estrategia por turnos con gusanos y arsenal.",
+        "link": "https://store.steampowered.com/app/327030/Worms_W_M_D/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/327030/header.jpg"
+    },
+    {
+        "nombre": "Duck Game",
+        "jugadores": "2–8",
+        "precio": "MX$69",
+        "descripcion": "Luchas con patos y armas en niveles dinamicos.",
+        "link": "https://store.steampowered.com/app/312530/Duck_Game/",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/312530/header.jpg"
+    }
+]

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="style.css">
+    <title>Arena de Votos</title>
+</head>
+
+<body>
+
+    <header>
+        <div id="navbar-container"></div>
+        <section id="banner" class="banner-section">
+            <div class="banner-content">
+                <h1>Arena de Votos</h1>
+                <h2>Juegos Multijugador</h2>
+            </div>
+            <div class="banner-overlay"></div>
+        </section>
+
+    </header>
+
+    <div id="search-sort-container">
+        <input type="text" id="searchInput" placeholder="Buscar juegos..." />
+        <select id="sortSelect">
+            <option value="nombre">Ordenar por nombre</option>
+            <option value="votos">Ordenar por votos</option>
+            <option value="peso">Ordenar por tamaño</option>
+        </select>
+    </div>
+
+    <p id="noResults"
+        style="display:none; text-align:center; font-family:'Poppins', sans-serif; font-size: 1.1rem; color: #777; margin-top: 20px;">
+        No se encontraron juegos que coincidan.
+    </p>
+
+
+    <div class="container" id="gameContainer"></div>
+    <div id="pagination" style="text-align:center; margin-bottom: 20px; margin-top: 20px;"></div>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close" onclick="closePopup()">&times;</button>
+            <div class="popup-header" id="popupHeader">
+                <h6 class="popup-title" id="popupTitle"></h6>
+            </div>
+            <div class="popup-body">
+                <p id="popupDesc"></p>
+                <p><strong>Jugadores:</strong> <span id="popupPlayers"></span></p>
+                <p><strong>Precio:</strong> <span id="popupPrice"></span></p>
+            </div>
+            <!-- Botón Votar -->
+            <button id="voteButton" class="popup-button">Votar</button>
+            <div id="popupLinks"></div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+<div id="footer-container"></div>
+
+</html>

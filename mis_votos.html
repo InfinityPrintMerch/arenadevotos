@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="style.css">
+    <title>Mis Votos</title>
+</head>
+
+<body>
+
+
+
+    <!-- Contenedor de tarjetas -->
+    <div id="gameContainer" class="container"></div>
+
+    <!-- Sin resultados -->
+    <p id="noResults" style="display: none; text-align: center; margin-top: 20px;">No hay juegos votados.</p>
+
+    <!-- Paginación -->
+    <div id="pagination" style="text-align: center; margin-top: 20px;"></div>
+
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close" onclick="closePopup()">&times;</button>
+            <div class="popup-header" id="popupHeader">
+                <h6 class="popup-title" id="popupTitle"></h6>
+            </div>
+            <div class="popup-body">
+                <p id="popupDesc"></p>
+                <p><strong>Jugadores:</strong> <span id="popupPlayers"></span></p>
+                <p><strong>Precio:</strong> <span id="popupPrice"></span></p>
+            </div>
+            <!-- Botón Votar -->
+            <button id="voteButton" class="popup-button">Votar</button>
+            <div id="popupLinks"></div>
+        </div>
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="mis_votos.js"></script>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+
+<div id="footer-container"></div>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+    <title>Arena de Votos</title>
+</head>
+
+<body>
+
+    <div class="votaciones-container">
+        <div class="chart-container">
+            <canvas id="voteChart"></canvas>
+        </div>
+        <div class="ranking-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ranking</th>
+                        <th>Juego</th>
+                        <th>Votos</th>
+                        <th>%</th>
+                    </tr>
+                </thead>
+                <tbody id="rankingBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="votos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="navbar.js"></script>
+</body>
+
+</html>
