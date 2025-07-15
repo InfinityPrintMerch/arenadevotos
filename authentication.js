@@ -465,8 +465,9 @@ async function cargarJuegosAdmin() {
 
 function loginWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).catch(error => console.error("Error al autenticar:", error));
+    auth.signInWithRedirect(provider);
 }
+
 
 function saveProfileName() {
     const profileName = profileNameInput.value.trim();
