@@ -134,6 +134,17 @@ const defaultImage = 'https://i.ibb.co/j9WyfkYp/default-icon.png';
 
 const adminEmails = ['eduardo.lpz.salinas@gmail.com']; // reemplaza con tu correo admin
 
+firebase.auth().getRedirectResult()
+  .then((result) => {
+    if (result.user) {
+      console.log('Usuario logueado desde redirect:', result.user);
+      // Aquí puedes hacer lo que haces normalmente en onAuthStateChanged si quieres
+    }
+  })
+  .catch((error) => {
+    console.error('Error en redirect login:', error);
+  });
+
 auth.onAuthStateChanged(async (user) => {
     if (user) {
         document.querySelector('.login-box-container').style.display = 'none';
