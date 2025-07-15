@@ -134,55 +134,50 @@ const defaultImage = 'https://i.ibb.co/j9WyfkYp/default-icon.png';
 
 const adminEmails = ['eduardo.lpz.salinas@gmail.com']; // reemplaza con tu correo admin
 
-firebase.auth().getRedirectResult()
-  .then((result) => {
-    if (result.user) {
-      console.log('Usuario logueado desde redirect:', result.user);
-      // Aquí puedes hacer lo que haces normalmente en onAuthStateChanged si quieres
-    }
-  })
-  .catch((error) => {
-    console.error('Error en redirect login:', error);
-  });
-
 auth.onAuthStateChanged(async (user) => {
     if (user) {
         document.querySelector('.login-box-container').style.display = 'none';
         loginBtn.style.display = 'none';
 
-        const isAdmin = adminEmails.includes(user.email);
+        const userRef = db.collection('usuarios').doc(user.uid);
+        const doc = await userRef.get();
 
-        if (isAdmin) {
+        if (!doc.exists) {
+            // Crear datos iniciales del usuario
+            await userRef.set({
+                nombrePerfil: user.displayName || 'Nuevo Usuario',
+                email: user.email,
+                profileImageUrl: user.photoURL || defaultImage,
+                creado: firebase.firestore.FieldValue.serverTimestamp()
+            });
+        }
+
+        // Ahora, cargar y mostrar los datos
+        const data = (await userRef.get()).data();
+
+        // Aquí actualizas la interfaz
+        savedProfileName.textContent = data.nombrePerfil || '';
+        userEmailSpan.textContent = user.email;
+        profileImage.src = data.profileImageUrl || defaultImage;
+        userCard.style.display = 'flex';
+        profileSection.style.display = 'none';
+
+        // también cargar otras funciones
+        cargarMisRecs();
+
+        // Si tienes botones o funciones específicas, llámalas aquí
+        if (adminEmails.includes(user.email)) {
             mostrarPanelAdministrador();
         }
 
-        const doc = await db.collection('usuarios').doc(user.uid).get();
-
-
-
-        if (doc.exists && doc.data().nombrePerfil) {
-            savedProfileName.textContent = doc.data().nombrePerfil;
-            userEmailSpan.textContent = user.email;
-            profileImage.src = doc.data().profileImageUrl || defaultImage;
-            userCard.style.display = 'flex';
-            profileSection.style.display = 'none';
-        } else {
-            profileImage.src = defaultImage;
-            profileSection.style.display = 'block';
-            userCard.style.display = 'none';
-            profileNameInput.value = '';
-        }
-
-        cargarMisRecs();
-
     } else {
+        // Usuario no logeado
         loginBtn.style.display = 'inline-block';
         profileSection.style.display = 'none';
         userCard.style.display = 'none';
         profileImage.src = defaultImage;
     }
 });
-
 function mostrarPanelAdministrador() {
     const menu = document.getElementById('user-menu');
     if (!menu) return;
@@ -476,9 +471,8 @@ async function cargarJuegosAdmin() {
 
 function loginWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithRedirect(provider);
+    auth.signInWithPopup(provider).catch(error => console.error("Error al autenticar:", error));
 }
-
 
 function saveProfileName() {
     const profileName = profileNameInput.value.trim();
@@ -507,7 +501,12 @@ function saveProfileName() {
 
 
 function logout() {
-    auth.signOut();
+    auth.signOut().then(() => {
+        // Recargar la página después de cerrar sesión
+        location.reload();
+    }).catch((error) => {
+        console.error("Error al cerrar sesión:", error);
+    });
 }
 
 
